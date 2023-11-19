@@ -1,22 +1,68 @@
 <!DOCTYPE html>
-    <html lang="en">
-        <head>
-            <meta charset="UTF-8">
-            <title>SignaLens</title>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>SignaLens</title>
 
-            <!--Preload-->
-            <link rel="preload" href="css/normalize.css" as="style">
-            <link rel="preload" href="css/style.css" as="style">
-
-            <link rel="stylesheet" href="css/normalize.css">
-            <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="/css/normalize.css">
+        <link rel="stylesheet" href="/css/styles.css">
+        <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/mobilenet"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/knn-classifier"></script>
         </head>
+
     <body>
         <nav class="nav-bar">
-            <button>Instrucciones</button>
-            <button>Entrenar</button>
-            <button>Cargar modelo</button>
-            <button>Guardar modelo</button>
+            <div class="nav-bar__logo">
+                <h1>SignaLens</h1>
+            </div>
+            <div class="nav-bar__buttons">
+                <button onclick="showInstructions();">Instrucciones</button>
+                <button id="btnTraining">Entrenar</button>
+                <button id="btnLoad">Cargar modelo</button>
+                <button id="btnSave">Guardar modelo</button>
+            </div>
         </nav>
+        <div class="container">
+            <div class="image-container">
+                <video autoplay playsinline muted id="webcam" width="400" height="400"></video>
+            </div> 
+            <div class="result-container">
+                <div id="canvas" width="640" height="480"></div>
+            </div>
+        </div>
+            <div class="alphabet">
+                <button class="alpha-btn btn" data-position="1">A</button>
+                <button class="alpha-btn btn" data-position="2">B</button>
+                <button class="alpha-btn btn" data-position="3">C</button>
+                <button class="alpha-btn btn" data-position="4">D</button>
+                <button class="alpha-btn btn" data-position="5">E</button>
+                <button class="alpha-btn btn" data-position="6">F</button>
+                <button class="alpha-btn btn" data-position="7">G</button>
+                <button class="alpha-btn btn" data-position="8">H</button>
+                <button class="alpha-btn btn" data-position="9">I</button>
+                <button class="alpha-btn btn" data-position="10">J</button>
+                <button class="alpha-btn btn" data-position="11">K</button>
+                <button class="alpha-btn btn" data-position="12">L</button>
+                <button class="alpha-btn btn" data-position="13">M</button>
+                <button class="alpha-btn btn" data-position="14">N</button>
+                <button class="alpha-btn btn" data-position="15">Ñ</button>
+                <button class="alpha-btn btn" data-position="16">O</button>
+                <button class="alpha-btn btn" data-position="17">P</button>
+                <button class="alpha-btn btn" data-position="18">Q</button>
+                <button class="alpha-btn btn" data-position="19">R</button>
+                <button class="alpha-btn btn" data-position="20">S</button>
+                <button class="alpha-btn btn" data-position="21">T</button>
+                <button class="alpha-btn btn" data-position="22">U</button>
+                <button class="alpha-btn btn" data-position="23">V</button>
+                <button class="alpha-btn btn" data-position="24">W</button>
+                <button class="alpha-btn btn" data-position="25">X</button>
+                <button class="alpha-btn btn" data-position="26">Y</button>
+                <button class="alpha-btn btn" data-position="27">Z</button>
+            </div>
+            <script src="/js/app.js"></script>
     </body>
+    <footer>
+        <p>&copy; 2023 SignaLens. | Made with <span class="heart">&hearts;</span> by Crypto-ch4r & Angel1t0</p>
+    </footer>
 </html>

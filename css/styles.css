@@ -1,0 +1,94 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #dadada;
+    margin: auto;
+    padding: auto;
+}
+
+.nav-bar{
+    background: #3D3D3D;
+    height: 80px;
+    width: 100%;
+    display: flex;
+}
+
+.nav-bar__logo{
+    display: flex;
+    align-items: center;
+    margin: 0 20px;
+}
+
+.nav-bar__logo h1{
+    color: white;
+    font-size: 30px;
+
+}
+
+.nav-bar__buttons{
+    display: flex;
+    justify-content: end;
+    width: 100%;
+    margin: 0 20px;
+}
+
+.nav-bar__buttons button{
+    background: none;
+    border: none;
+    color: white;
+    font-size: 20px;
+    margin: 0 10px;
+    cursor: pointer;
+}
+
+.nav-bar__buttons button:hover{
+    color: #FFC107;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+}
+
+.btn {
+    padding: 1rem 2rem;
+    background: rgb(223, 134, 0);
+    border: none;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+    border-radius: 1rem;
+    
+}
+
+.btn:hover {
+    background: rgb(255, 193, 7);
+    color: black;
+}
+
+.alphabet{
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-gap: 1rem;
+    justify-content: center;
+    padding: 2rem;
+}
+
+/* Estilos para el footer */
+footer {
+    background-color: #3D3D3D;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    width: 100%;
+    margin-top: 1rem;
+}
+
+footer p {
+    margin: 0;
+}
+
+.heart {
+    color: red;
+    font-size: 18px;
+}
