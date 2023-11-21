@@ -19,6 +19,10 @@ Signa Lens es una herramienta divertida que te permite entrenar un modelo utiliz
 ## Requisitos
 
 - Navegador compatible con TensorFlow.js y acceso a la cámara web.
+- Tome en cuenta la siguiente imagen al momento de entenar el modelo:
+
+![Captura de pantalla 2023-11-20 151013](https://github.com/Crypto-ch4r/SignaLens/assets/61950097/bc1018c7-ed7d-4e0a-b0ee-9d97d5a98fee)
+
 
 ## Cómo Iniciar
 
