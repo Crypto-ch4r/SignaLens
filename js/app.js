@@ -12,25 +12,10 @@ let modelTraining = false;
 //Claes de las letras del alfabeto
 const classes = { 1: "A", 2: "B", 3: "C", 4: "D", 5: "E", 6: "F", 7:"G", 8:"H", 9:"I", 10:"J", 11:"K", 12:"L", 13:"M", 14:"N", 15: "Ñ", 16:"O", 17:"P", 18:"Q", 19:"R", 20:"S", 21:"T", 22:"U", 23:"V", 24:"W", 25:"X", 26:"Y", 27:"Z"};
 
-// Función para mostrar el cuadro de diálogo con un mensaje
-const showDialog = (message, isError = false) => {
-  const dialog = document.getElementById('dialog');
-  const dialogMessage = document.getElementById('dialog-message');
-  dialogMessage.innerText = message;
-
-  if (isError) {
-    dialogMessage.style.color = 'red';
-  } else {
-    dialogMessage.style.color = 'green';
-  }
-
-  dialog.style.display = 'block';
-};
-
-// Función para cerrar el cuadro de diálogo
-const closeDialog = () => {
-  const dialog = document.getElementById('dialog');
-  dialog.style.display = 'none';
+// Función para limpiar las letras formadas
+const clearWord = () => {
+  letterBuffer = []; // Limpiar el arreglo de letras
+  processWord(); // Actualizar la interfaz
 };
 
 // Agregar ejemplo de imagen al modelo
@@ -89,10 +74,11 @@ const app = async () => {
           }
       }, 2000); // Hace una predicción cada 2 segundos
 
-      // Evento para detectar el fin de palabra (puedes ajustar según sea necesario)
-      document.getElementById("btnSpace").addEventListener("click", () => {
-        processWord();
-      });
+    // Nuevo botón para limpiar letras formadas
+    const btnClear = document.getElementById("btnClear");
+    btnClear.addEventListener("click", () => {
+      clearWord();
+    });
       
       // Limpiar el intervalo cuando se cierre la ventana
       window.addEventListener("beforeunload", () => {
