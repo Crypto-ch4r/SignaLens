@@ -12,6 +12,25 @@ let modelTraining = false;
 //Claes de las letras del alfabeto
 const classes = { 1: "A", 2: "B", 3: "C", 4: "D", 5: "E", 6: "F", 7:"G", 8:"H", 9:"I", 10:"J", 11:"K", 12:"L", 13:"M", 14:"N", 15: "Ñ", 16:"O", 17:"P", 18:"Q", 19:"R", 20:"S", 21:"T", 22:"U", 23:"V", 24:"W", 25:"X", 26:"Y", 27:"Z"};
 
+// Inicializar Toastr
+toastr.options = {
+  "closeButton": true,
+  "debug": false,
+  "newestOnTop": false,
+  "progressBar": true,
+  "positionClass": "toast-bottom-right",
+  "preventDuplicates": false,
+  "onclick": null,
+  "showDuration": "2000",
+  "hideDuration": "100",
+  "timeOut": "2000",
+  "extendedTimeOut": "1000",
+  "showEasing": "swing",
+  "hideEasing": "linear",
+  "showMethod": "fadeIn",
+  "hideMethod": "fadeOut"
+}
+
 // Función para limpiar las letras formadas
 const clearWord = () => {
   letterBuffer = []; // Limpiar el arreglo de letras
@@ -43,7 +62,7 @@ const processWord = () => {
 const app = async () => {
     try{
         webCamera = await tf.data.webcam(webcamElement);
-
+        
         // Cargar el modelo
         model = await mobilenet.load();
 
@@ -53,6 +72,9 @@ const app = async () => {
               const img = await webCamera.capture();
               const activation = model.infer(img, "conv_preds");
               const result = await classifier.predictClass(activation);
+
+              // Inicializar Toastr
+              toastr.info("Leyendo...");
       
               letterBuffer.push(classes[result.label]);
 
@@ -201,6 +223,10 @@ btnTrain.addEventListener("click", () => {
       buttons: false,
       timer: 3000,
     } );
+
+    // Añadir la clase para mostrar los botones de letras
+    document.getElementById("alphabet-container").classList.toggle("alphabet-btn-visible", modelTraining);
+
   });
   
   // Guardar el modelo

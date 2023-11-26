@@ -78,6 +78,15 @@ body {
 
 }
 
+.tracking-box {
+    position: absolute;
+    border: 2px solid #FFC107;
+    box-shadow: 0 0 10px rgba(255, 193, 7, 0.5);
+    pointer-events: none;
+    opacity: 0; /* Inicialmente invisible */
+    transition: opacity 0.5s ease-in-out;
+}
+
 .result-container {
     background-color: #fff;
     margin-top: 1rem;
@@ -93,7 +102,25 @@ body {
     grid-gap: 1rem;
     justify-content: center;
     padding: 2rem;
+    border-radius: 1rem;
+    margin: 1rem;
+    box-shadow: #3D3D3D 0px 0px 3px;
+
 }
+
+.alphabet-btn-visible .alphabet-btn {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 1s ease-in-out, visibility 1s ease-in-out;
+}
+
+.alphabet-btn {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 1s ease-in-out, visibility 1s ease-in-out;
+}
+
+
 
 /* Estilos para el cuadro de diálogo modal */
 .modal {
@@ -136,34 +163,6 @@ body {
 .modal button:hover {
     background-color: #45a047;
 }
-
-.dialog {
-    display: none;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: #f1f1f1;
-    padding: 20px;
-    border: 1px solid #ccc;
-    z-index: 1;
-  }
-
-  .dialog-content {
-    position: relative;
-  }
-  
-  .close-btn {
-    position: absolute;
-    top: 5px;
-    right: 10px;
-    font-size: 20px;
-    cursor: pointer;
-  }
-  
-  .close-btn:hover {
-    color: #f00;
-  }
 
 /* Estilos para el footer */
 footer {
