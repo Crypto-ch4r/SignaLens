@@ -7,6 +7,7 @@
         <link rel="stylesheet" href="/css/normalize.css">
         <link rel="stylesheet" href="/css/styles.css">
         <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/handpose"></script>
         <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/mobilenet"></script>
         <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/knn-classifier"></script>
         </head>
@@ -28,6 +29,7 @@
             <div class="tracking-box" id="trackingBox"></div>
             <div class="image-container">
                 <video autoplay playsinline muted id="webcam" width="400" height="400"></video>
+                <canvas id="canvas" width="400" height="400"></canvas>
             </div>
 
             <div class="result-container">
